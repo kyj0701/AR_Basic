@@ -15,6 +15,7 @@ public class ARPlaceOnPlane : MonoBehaviour
     void Start()
     {
         cubePos = GameObject.Find("Pose").GetComponent<Text>();
+        // Input.gyro.enabled = true;
     }
 
     // Update is called once per frame
@@ -36,6 +37,8 @@ public class ARPlaceOnPlane : MonoBehaviour
             placeObject.SetActive(true);
             placeObject.transform.SetPositionAndRotation(placementPose.position, placementPose.rotation);
             cubePos.text = "X:" + placementPose.position.x.ToString() + " Y: " + placementPose.position.y.ToString() + " Z: " + placementPose.position.z.ToString();
+            // cubePos.text = "X:" + Input.acceleration.x.ToString() + " Y: " + Input.acceleration.y.ToString() + " Z: " + Input.acceleration.z.ToString();
+            // cubePos.text = "X:" + Input.gyro.rotationRate.x.ToString() + " Y: " + Input.gyro.rotationRate.y.ToString() + " Z: " + Input.gyro.rotationRate.z.ToString();
         }
         else
         {
